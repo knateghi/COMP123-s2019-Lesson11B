@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System;
 
-/// <summary>
+
 /// Name:Kobra Nateghi
 /// Date: Dec 20, 2019
 /// Description: This is the Face enum
