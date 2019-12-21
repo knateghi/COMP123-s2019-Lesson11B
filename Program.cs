@@ -2,7 +2,7 @@
 /// <summary>
 /// Name:Kobra Nateghi
 /// Date: Dec 20, 2019
-/// Version: 0.1 created the project
+/// Version: 0.2 implemented the Deck class
 /// </summary>
 namespace COMP123_s2019_Lesson11B
 {
@@ -10,7 +10,9 @@ namespace COMP123_s2019_Lesson11B
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Deck deck = new Deck();
+
+            Console.WriteLine(deck.ToString());
         }
     }
 }
