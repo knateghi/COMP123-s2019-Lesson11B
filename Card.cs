@@ -4,11 +4,11 @@ using System.Text;
 /// Name:Kobra Nateghi
 /// Date: Dec 20, 2019
 /// Description: This is the Card Class
-/// Version: 0.1 created the Card Class
+/// Version: 0.2 - implemented the ICLonable Interface
 /// </summary>
 namespace COMP123_s2019_Lesson11B
 {
-    public class Card
+    public class Card :ICloneable
     {
         //private instance variables
 
@@ -29,8 +29,17 @@ namespace COMP123_s2019_Lesson11B
             this.Face = face;
             this.Suit = suit;
         }
-        //private methods
+
         //public methods
+        /// <summary>
+        /// This method overrides the built int clone method
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
+        {
+            return new Card(this.Face, this.Suit);
+        }
+        //private methods
 
     }
 }

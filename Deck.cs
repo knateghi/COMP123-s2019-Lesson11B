@@ -6,7 +6,7 @@ using System.Text;
 /// Date: Dec 20, 2019
 /// Description: This is the Deck Class
 /// It inherits from List generic and uses Card as the base type
-/// Version: 0.1 created the Deck Class
+/// Version: 0.2 add the shuffle method
 /// </summary>
 
 namespace COMP123_s2019_Lesson11B
@@ -14,7 +14,10 @@ namespace COMP123_s2019_Lesson11B
     public class Deck: List<Card>
     {
         //private instance variables
-        //public properties
+        private Random _random;
+
+        //private properties
+        private Random Random { get=> this._random; }
         //public constructor
         /// <summary>
         /// This is the main constructor
@@ -31,6 +34,9 @@ namespace COMP123_s2019_Lesson11B
         /// </summary>
         private void _initilize()
         {
+            //initialize the pseudo-random number generator
+            this._random = new Random();
+            //this builds the deck-fills it out with cards
             for (int suit = (int)Suit.Clubs; suit <= (int)Suit.Spades; suit++)
             {
                 for (int face = (int)Face.Ace; face <= (int)Face.King; face++)
@@ -49,13 +55,35 @@ namespace COMP123_s2019_Lesson11B
             string outputSTring = "";
             foreach(Card card in this)
             {
-                outputSTring += " The " + card.Face + " Of " + card.Suit + " \n";
+                outputSTring += " The " + card.Face + " -- " + card.Suit + " \n";
             }
             return outputSTring;
         }
 
-    }
         //public methods
+        /// <summary>
+        /// This method shuffles the Deck by using random indices to select two cards at a time
+        /// it uses a Fisher-Yates like algorithm
+        /// </summary>
+        public void Shuffle()
+        {
+            int firstCard;
+            int secondCard;
+            Card tempCard;
+            for(int card = 0; card < this.Count; card++)
+            {
+                firstCard = this.Random.Next(0,52);
+                secondCard = this.Random.Next(0, 52);
+                tempCard = (Card)this[secondCard].Clone();
+                this[secondCard].Face = this[firstCard].Face;
+                this[secondCard].Suit = this[firstCard].Suit;
 
+                this[firstCard].Face = tempCard.Face;
+                this[firstCard].Suit = tempCard.Suit;
+
+            }
+        }
+
+    }
 
     }

@@ -2,7 +2,7 @@
 /// <summary>
 /// Name:Kobra Nateghi
 /// Date: Dec 20, 2019
-/// Version: 0.2 implemented the Deck class
+/// Version: 0.3 Test the shuffle method
 /// </summary>
 namespace COMP123_s2019_Lesson11B
 {
@@ -12,6 +12,13 @@ namespace COMP123_s2019_Lesson11B
         {
             Deck deck = new Deck();
 
+            Console.WriteLine("Original deck: ");
+            Console.WriteLine("===============================================");
+            Console.WriteLine(deck.ToString());
+            Console.WriteLine( );
+            deck.Shuffle();
+            Console.WriteLine("SHuffles deck: ");
+            Console.WriteLine("===============================================");
             Console.WriteLine(deck.ToString());
         }
     }
