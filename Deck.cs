@@ -61,7 +61,7 @@ namespace COMP123_s2019_Lesson11B
                 outputSTring += " The " + card.Face + " -- " + card.Suit + " \n";
             }
             return outputSTring;
-        }
+            }
 
         //public methods
         /// <summary>
