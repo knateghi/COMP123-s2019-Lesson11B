@@ -6,12 +6,12 @@ using System.Text;
 /// Date: Dec 20, 2019
 /// Description: This is the Deck Class
 /// It inherits from List generic and uses Card as the base type
-/// Version: 0.3 Refactored the shuffle method
+/// Version: 0.4 refactored to extends the CardList abstract class
 /// </summary>
 
 namespace COMP123_s2019_Lesson11B
 {
-    public class Deck: List<Card>
+    public class Deck: CardList
     {
         //private instance variables
         private Random _random;
@@ -20,19 +20,20 @@ namespace COMP123_s2019_Lesson11B
         private Random Random { get=> this._random; } 
         //public constructor
         /// <summary>
-        /// This is the main constructor
+        /// This is the main constructor we take out the default constructor because the initialize method is already
+        /// called by the Super class
         /// </summary>
-        public Deck()
-        {
-            this._initilize();
-        }
+        //public Deck()
+        //{
+        //    this._initilize();
+        //}
 
         //private methods
         /// <summary>
         /// This is the _initialize methods, it sets variables for private variables
         /// and public properties as well as other class objects
         /// </summary>
-        private void _initilize()
+        protected override void _initilize()
         {
             //initialize the pseudo-random number generator
             this._random = new Random();

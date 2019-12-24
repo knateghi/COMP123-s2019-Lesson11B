@@ -20,6 +20,7 @@ namespace COMP123_s2019_Lesson11B
             Console.WriteLine("Shuffled deck:            Numebr of Cards: "+deck.Count);
             Console.WriteLine("===============================================");
             Console.WriteLine(deck.ToString());
+
         }
     }
 }
