@@ -12,12 +12,12 @@ namespace COMP123_s2019_Lesson11B
         {
             Deck deck = new Deck();
 
-            Console.WriteLine("Original deck: ");
+            Console.WriteLine("Original deck              Number of Cards: "+deck.Count);
             Console.WriteLine("===============================================");
             Console.WriteLine(deck.ToString());
             Console.WriteLine( );
             deck.Shuffle();
-            Console.WriteLine("SHuffles deck: ");
+            Console.WriteLine("Shuffled deck:            Numebr of Cards: "+deck.Count);
             Console.WriteLine("===============================================");
             Console.WriteLine(deck.ToString());
         }

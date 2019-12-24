@@ -4,11 +4,11 @@ using System.Text;
 /// Name:Kobra Nateghi
 /// Date: Dec 20, 2019
 /// Description: This is the Card Class
-/// Version: 0.2 - implemented the ICLonable Interface
+/// Version: 0.3 added the Overwrite method
 /// </summary>
 namespace COMP123_s2019_Lesson11B
 {
-    public class Card :ICloneable
+    public class Card : ICloneable
     {
         //private instance variables
 
@@ -16,7 +16,7 @@ namespace COMP123_s2019_Lesson11B
         private Suit _suit;
 
         //public properties
-        public Face Face { get=>this._face; set=>this._face=value ; }
+        public Face Face { get => this._face; set => this._face = value; }
         public Suit Suit { get => this._suit; set => this._suit = value; }
         //constructors
         /// <summary>
@@ -39,7 +39,19 @@ namespace COMP123_s2019_Lesson11B
         {
             return new Card(this.Face, this.Suit);
         }
-        //private methods
+        /// <summary>
+        /// This method overwrites the first card property with the second card property
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        public static void Overwrite(Card first, Card second)
+        {
+            first.Face = second.Face;
+            first.Suit = second.Suit;
+            
 
+        }
     }
+
 }
+

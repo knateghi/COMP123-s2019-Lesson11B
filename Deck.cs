@@ -6,7 +6,7 @@ using System.Text;
 /// Date: Dec 20, 2019
 /// Description: This is the Deck Class
 /// It inherits from List generic and uses Card as the base type
-/// Version: 0.2 add the shuffle method
+/// Version: 0.3 Refactored the shuffle method
 /// </summary>
 
 namespace COMP123_s2019_Lesson11B
@@ -17,7 +17,7 @@ namespace COMP123_s2019_Lesson11B
         private Random _random;
 
         //private properties
-        private Random Random { get=> this._random; }
+        private Random Random { get=> this._random; } 
         //public constructor
         /// <summary>
         /// This is the main constructor
@@ -72,14 +72,32 @@ namespace COMP123_s2019_Lesson11B
             Card tempCard;
             for(int card = 0; card < this.Count; card++)
             {
-                firstCard = this.Random.Next(0,52);
-                secondCard = this.Random.Next(0, 52);
-                tempCard = (Card)this[secondCard].Clone();
-                this[secondCard].Face = this[firstCard].Face;
-                this[secondCard].Suit = this[firstCard].Suit;
 
-                this[firstCard].Face = tempCard.Face;
-                this[firstCard].Suit = tempCard.Suit;
+                firstCard = this.Random.Next(0, this.Count);
+                secondCard = this.Random.Next(0, this.Count);
+
+
+                tempCard = (Card)this[secondCard].Clone();
+                Card.Overwrite(this[secondCard], this[firstCard]);
+
+                Card.Overwrite(this[firstCard], tempCard);
+
+
+                //or let's try
+                //tempCard = (Card)this[firstCard].Clone();
+                //Card.Overwrite(this[firstCard], this[secondCard]);
+
+                //Card.Overwrite(this[secondCard], tempCard);
+
+
+
+
+
+                //this[secondCard].Face = this[firstCard].Face;
+                //this[secondCard].Suit = this[firstCard].Suit;
+
+                //this[firstCard].Face = tempCard.Face;
+                //this[firstCard].Suit = tempCard.Suit;
 
             }
         }
