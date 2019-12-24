@@ -5,8 +5,8 @@ using System.Text;
 /// Name:Kobra Nateghi
 /// Date: Dec 20, 2019
 /// Description: This is the Deck Class
-/// It inherits from List generic and uses Card as the base type
-/// Version: 0.5 refactored the ToString methods to include a header
+/// It inherits from Cardlist abstract class
+/// Version: 0.6 added the Deal1 method
 /// </summary>
 
 namespace COMP123_s2019_Lesson11B
@@ -54,7 +54,7 @@ namespace COMP123_s2019_Lesson11B
             public override string ToString()
             {
             string outputSTring = "";
-            outputSTring+=" Deck contains              Number of Cards: " + this.Count+"\n";
+            outputSTring+=" Deck contains  Number of Cards: " + this.Count+"\n";
            outputSTring+= "===============================================\n";
             foreach (Card card in this)
             {
@@ -103,6 +103,13 @@ namespace COMP123_s2019_Lesson11B
                 //this[firstCard].Suit = tempCard.Suit;
 
             }
+        }
+        public Card Deal1()
+        {
+            Card topCard = this[0];
+            this.RemoveAt(0); //this removes the top card from the deck
+            return topCard;
+
         }
 
     }
