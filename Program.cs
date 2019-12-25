@@ -2,7 +2,7 @@
 /// <summary>
 /// Name:Kobra Nateghi
 /// Date: Dec 20, 2019
-/// Version: 0.3 Test the shuffle method
+/// Version: 0.4 Tested the new Deck class
 /// </summary>
 namespace COMP123_s2019_Lesson11B
 {
@@ -11,16 +11,24 @@ namespace COMP123_s2019_Lesson11B
         static void Main(string[] args)
         {
             Deck deck = new Deck();
-
-            Console.WriteLine("Original deck              Number of Cards: "+deck.Count);
-            Console.WriteLine("===============================================");
+            Hand hand = new Hand();
+           
             Console.WriteLine(deck.ToString());
             Console.WriteLine( );
             deck.Shuffle();
-            Console.WriteLine("Shuffled deck:            Numebr of Cards: "+deck.Count);
-            Console.WriteLine("===============================================");
+            Console.WriteLine("shuffled");
             Console.WriteLine(deck.ToString());
 
+
+            Console.WriteLine();
+            hand.Add(deck.Deal1());
+            Console.WriteLine(hand.ToString());
+
+            hand.Add(deck.Deal1());
+            Console.WriteLine(hand.ToString());
+
+            Console.WriteLine();
+            Console.WriteLine(deck.ToString());
         }
     }
 }

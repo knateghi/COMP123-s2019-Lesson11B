@@ -20,7 +20,7 @@ namespace COMP123_s2019_Lesson11B
         private Random Random { get=> this._random; } 
         //public constructor
         /// <summary>
-        /// This is the main constructor we take out the default constructor because the initialize method is already
+        /// This is the main constructor..... we take out the default constructor because the initialize method is already
         /// called by the Super class
         /// </summary>
         //public Deck()
@@ -108,6 +108,8 @@ namespace COMP123_s2019_Lesson11B
         {
             Card topCard = this[0];
             this.RemoveAt(0); //this removes the top card from the deck
+            Console.WriteLine("Dealt one card- size of the Deck: "+this.Count); //for testing /debugging only
+
             return topCard;
 
         }
